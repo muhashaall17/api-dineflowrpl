@@ -9,6 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Tambahkan ini
+app.get('/', (req, res) => {
+  res.send('🚀 Dineflow API is running!');
+});
+
 // Import routes
 app.use("/api/meja", require("./routes/MejaRoutes"));
 
