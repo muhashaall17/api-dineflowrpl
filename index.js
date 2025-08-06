@@ -9,11 +9,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// CEK DEFAULT '/' AMAN
-app.get('/', (req, res) => {
-  res.send('🚀 Dineflow API Work!');
-});
-
 // Import routes
 app.use("/api/meja", require("./routes/MejaRoutes"));
 
@@ -21,7 +16,7 @@ app.use('/api/menu', require('./routes/MenuRoutes'));
 app.use('/api/user', require('./routes/UserRoutes'));
 
 app.use('/api/transaksi', require('./routes/TransaksiRoutes'));
-
+app.use("/api/owner", require("./routes/OwnerRoutes"));
 
 
 
